@@ -37,14 +37,10 @@
 
 ## buyersテーブル
 
-| Column         | Type       | Options           |
-| -------------- | ---------- | ----------------- |
-| card_number    | integer    | null: false       |
-| card_exp_month | integer    | null: false       |
-| card_exp_year  | integer    | null: false       |
-| card_cvv       | integer    | null: false       |
-| user           | references | foreign_key: true |
-| item           | references | foreign_key: true |
+| Column | Type       | Options           |
+| ------ | ---------- | ----------------- |
+| user   | references | foreign_key: true |
+| item   | references | foreign_key: true |
 
 ### Association
 - belongs_to :user
