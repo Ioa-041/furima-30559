@@ -12,5 +12,5 @@ class User < ApplicationRecord
     validates :birthday
   end
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :encrypted_password, with: PASSWORD_REGEX, message: "は文字と数字の両方を含めてください。"
+  validates_format_of :password, with: PASSWORD_REGEX, message: "は英字と数字の両方を含めてください。"
 end
