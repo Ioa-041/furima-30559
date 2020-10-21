@@ -52,7 +52,6 @@ describe User do
       it 'emailに@がないと登録できない' do
         @user.email = 'kkk.com'
         @user.valid?
-        binding.pry
         expect(@user.errors.full_messages).to include('Email is invalid')
       end
 
