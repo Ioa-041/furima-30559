@@ -17,7 +17,7 @@ class Item < ApplicationRecord
     validates :sales_status
     validates :scheduled
     validates :shipping_fee_status
-    validates :price, format: { with: /[3-9][0-9]{2}|[1-9][0-9]{3,6}/, message: 'Out of setting range' }
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
     validates :price, format: { with: /[3-9][0-9]{2}|[1-9][0-9]{3,6}/, message: 'Half-width number' }
   end
 
