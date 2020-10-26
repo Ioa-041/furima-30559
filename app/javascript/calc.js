@@ -5,8 +5,8 @@ function calc() {
     const price       = itemPrice.value;
     const addTaxPrice = document.getElementById("add-tax-price");
     const profit      = document.getElementById("profit");
-    const taxVal      = price * 0.1;
-    const profitVal   = price * 0.9;
+    const taxVal      = Math.floor(price * 0.1);
+    const profitVal   = price - taxVal;
     addTaxPrice.innerHTML = taxVal
     profit.innerHTML      = profitVal
   });
