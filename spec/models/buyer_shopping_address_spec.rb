@@ -33,19 +33,19 @@ RSpec.describe BuyerShoppingAddress, type: :model do
       it 'postal_codeにハイフン(-)が含まれないと登録できない' do
         @buyer_shopping_address.postal_code = '1234567'
         @buyer_shopping_address.valid?
-        expect(@buyer_shopping_address.errors.full_messages).to include("Postal code Input correctly")
+        expect(@buyer_shopping_address.errors.full_messages).to include('Postal code Input correctly')
       end
 
       it 'postal_codeのハイフン以前の文字数が3文字でないと登録できない' do
         @buyer_shopping_address.postal_code = '12-3456'
         @buyer_shopping_address.valid?
-        expect(@buyer_shopping_address.errors.full_messages).to include("Postal code Input correctly")
+        expect(@buyer_shopping_address.errors.full_messages).to include('Postal code Input correctly')
       end
 
       it 'postal_codeのハイフン以降の文字数が4文字でないと登録できない' do
         @buyer_shopping_address.postal_code = '123-456'
         @buyer_shopping_address.valid?
-        expect(@buyer_shopping_address.errors.full_messages).to include("Postal code Input correctly")
+        expect(@buyer_shopping_address.errors.full_messages).to include('Postal code Input correctly')
       end
 
       it 'prefectureが空だと登録できない' do
@@ -57,7 +57,7 @@ RSpec.describe BuyerShoppingAddress, type: :model do
       it 'prefectureが1だと登録できない' do
         @buyer_shopping_address.prefecture = '1'
         @buyer_shopping_address.valid?
-        expect(@buyer_shopping_address.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@buyer_shopping_address.errors.full_messages).to include('Prefecture must be other than 1')
       end
 
       it 'cityが空だと登録できない' do
@@ -81,13 +81,13 @@ RSpec.describe BuyerShoppingAddress, type: :model do
       it 'phone_numberが11桁以上だと登録できない' do
         @buyer_shopping_address.phone_number = '090123456789'
         @buyer_shopping_address.valid?
-        expect(@buyer_shopping_address.errors.full_messages).to include("Phone number Input only number")
+        expect(@buyer_shopping_address.errors.full_messages).to include('Phone number Input only number')
       end
 
       it 'phone_numberにハイフンがあると登録できない' do
         @buyer_shopping_address.phone_number = '03-124-678'
         @buyer_shopping_address.valid?
-        expect(@buyer_shopping_address.errors.full_messages).to include("Phone number Input only number")
+        expect(@buyer_shopping_address.errors.full_messages).to include('Phone number Input only number')
       end
     end
   end

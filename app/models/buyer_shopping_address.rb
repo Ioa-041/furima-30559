@@ -1,4 +1,4 @@
-class BuyerShoppingAddress 
+class BuyerShoppingAddress
   include ActiveModel::Model
   attr_accessor :postal_code, :prefecture, :city, :address, :building, :phone_number, :user_id, :item_id, :token
 
